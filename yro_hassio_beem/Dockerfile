@@ -14,6 +14,8 @@ RUN apk add --no-cache python3 py3-pip git && \
     pip3 install pyyaml && \
     git clone -b main --single-branch --depth 1 https://github.com/yroffin/hassio-yro-addons
 
+RUN cd /app/hassio-yro-addons/yro_hassio_beem && ls -lrt && python3 -m pip install -r requirements.txt
+
 # Copy data for add-on
 COPY run.sh .
 RUN chmod a+x run.sh
