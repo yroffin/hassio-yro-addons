@@ -19,7 +19,7 @@ arch:
   - i386
 options:
   log_file: "/config/yro_hassio_beem.log"
-  enocean_port: ""
   debug: false
 schema:
   log_file: "str?"
+  debug: "bool?"
