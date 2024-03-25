@@ -9,8 +9,6 @@ uart: false
 hassio_api: false
 homeassistant_api: true
 startup: "application"
-services:
-map:
 arch:
   - aarch64
   - amd64
