@@ -1,4 +1,4 @@
-name: "Yro Hassio Beem Box"
+name: "Yro Hassio Beem Box v0.0.1b"
 description: "Hassio Beem Box bridge for Home Assistant"
 url: "https://github.com/mak-gitdev/HA_enoceanmqtt-addon"
 version: "0.0.1b"
