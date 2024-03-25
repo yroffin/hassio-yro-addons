@@ -1,6 +1,21 @@
-# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-dockerfile
 ARG BUILD_FROM
 FROM $BUILD_FROM
 
-# Execute during the build of the image
-ARG TEMPIO_VERSION BUILD_ARCH
+ARG BUILD_VERSION
+
+# Create Working Directory
+WORKDIR /app
+
+# Install enoceanmqtt and requirements
+RUN apk add --no-cache python3 py3-pip git && \
+    python3 -m venv /app/venv && \
+    . /app/venv/bin/activate && \
+    python3 -m pip install --upgrade pip && \
+    pip3 install pyyaml && \
+    git clone -b main --single-branch --depth 1 https://github.com/yroffin/hassio-yro-addons
+
+# Copy data for add-on
+COPY run.sh .
+RUN chmod a+x run.sh
+
+CMD [ "/app/run.sh" ]
