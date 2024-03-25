@@ -12,7 +12,7 @@ RUN apk add --no-cache python3 py3-pip git && \
     . /app/venv/bin/activate && \
     python3 -m pip install --upgrade pip && \
     pip3 install pyyaml && \
-    git clone -b main --single-branch --depth 1 https://github.com/yroffin/hassio-yro-addons?cache=20240321
+    git clone -b main --single-branch --depth 1 https://github.com/yroffin/hassio-yro-addons && echo `date`
 
 RUN cd /app/hassio-yro-addons/yro_hassio_beem && ls -lrt && python3 -m pip install -r requirements.txt
 
