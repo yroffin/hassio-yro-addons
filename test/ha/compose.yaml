@@ -1,0 +1,27 @@
+version: '3'
+services:
+  homeassistant:
+    container_name: homeassistant-core
+    build:
+      context: ${WORKSPACE}/test/ha
+    volumes:
+      # on container init all /tmp/config files will be copied in /config
+      - ${WORKSPACE}/test/ha/config:/tmp/config
+      # hard mount on component folder
+      - ${WORKSPACE}/yro_hassio_beem:/config/custom_components/yro_hassio_beem
+      - /etc/localtime:/etc/localtime:ro
+      - /run/dbus:/run/dbus:ro
+    privileged: true
+    network_mode: host
+    ports:
+      - "5678:5678"
+  autoheal:
+    container_name: homeassistant-healer
+    restart: always
+    image: willfarrell/autoheal
+    environment:
+      - AUTOHEAL_CONTAINER_LABEL=all
+      - AUTOHEAL_INTERVAL=2
+      - AUTOHEAL_DEFAULT_STOP_TIMEOUT=1
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock

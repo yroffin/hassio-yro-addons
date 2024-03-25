@@ -1,0 +1,20 @@
+{
+    "domain": "yro_hassio_beem",
+    "version": "1.0",
+    "name": "Beem integration component",
+    "after_dependencies": [],
+    "codeowners": [
+        "@yroffin"
+    ],
+    "dependencies": [],
+    "config_flow": true,
+    "documentation": "https://www.home-assistant.io/components/todo",
+    "integration_type": "device",
+    "iot_class": "local_polling",
+    "issue_tracker": "https://github.com/balloob/hue/issues",
+    "loggers": [
+        "aiohue"
+    ],
+    "requirements": [],
+    "quality_scale": "silver"
+}
