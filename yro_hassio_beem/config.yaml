@@ -1,7 +1,7 @@
-name: "Yro Hassio Beem Box v0.0.1c"
+name: "Yro Hassio Beem Box v0.0.1d"
 description: "Hassio Beem Box bridge for Home Assistant"
 url: "https://github.com/yroffin/hassio-yro-addons/tree/main/yro_hassio_beem"
-version: "0.0.1c"
+version: "0.0.1d"
 slug: "yro_hassio_beem"
 stage: "experimental"
 init: false
@@ -15,6 +15,9 @@ arch:
   - armhf
   - armv7
   - i386
+map:
+  - addon_config:rw
+  - homeassistant_config:rw
 options:
   log_file: "/config/yro_hassio_beem.log"
   debug: false
