@@ -1,0 +1,25 @@
+name: "Yro Hassio Beem Box"
+description: "Hassio Beem Box bridge for Home Assistant"
+url: "https://github.com/mak-gitdev/HA_enoceanmqtt-addon"
+version: "0.0.1"
+slug: "yro_hassio_beem"
+stage: "experimental"
+init: false
+uart: false
+hassio_api: false
+homeassistant_api: true
+startup: "application"
+services:
+map:
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+options:
+  log_file: "/config/yro_hassio_beem.log"
+  enocean_port: ""
+  debug: false
+schema:
+  log_file: "str?"
