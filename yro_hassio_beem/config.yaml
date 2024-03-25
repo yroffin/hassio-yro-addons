@@ -1,7 +1,7 @@
 name: "Yro Hassio Beem Box"
 description: "Hassio Beem Box bridge for Home Assistant"
 url: "https://github.com/mak-gitdev/HA_enoceanmqtt-addon"
-version: "0.0.1"
+version: "0.0.1a"
 slug: "yro_hassio_beem"
 stage: "experimental"
 init: false
