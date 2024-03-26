@@ -9,6 +9,11 @@ jobs:
       uses: thedoctor0/zip-release@0.7.5
       with:
         type: 'zip'
-        filename: 'release.zip'
+        filename: 'yro_hassio_beem.zip'
         path: yro_hassio_beem
         exclusions: '*.git* .*'
+    - name: Upload Release
+      uses: ncipollo/release-action@v1.12.0
+      with:
+        artifacts: "yro_hassio_beem.zip"
+        token: ${{ secrets.GITHUB_TOKEN }}
