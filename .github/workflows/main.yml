@@ -1,5 +1,5 @@
 name: Create Archive
-on: [tag]
+on: [release]
 # jobs
 jobs:
   build:
